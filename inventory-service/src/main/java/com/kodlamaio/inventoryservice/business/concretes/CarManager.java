@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -22,7 +23,7 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public GetCarResponse getById(int id) {
+    public GetCarResponse getById(UUID id) {
         return null;
     }
 
@@ -32,12 +33,12 @@ public class CarManager implements CarService {
     }
 
     @Override
-    public UpdateCarResponse update(int id, UpdateCarRequest request) {
+    public UpdateCarResponse update(UUID id, UpdateCarRequest request) {
         return null;
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(UUID id) {
 
     }
 }

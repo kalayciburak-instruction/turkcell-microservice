@@ -8,11 +8,12 @@ import com.kodlamaio.inventoryservice.business.dto.responses.get.GetBrandRespons
 import com.kodlamaio.inventoryservice.business.dto.responses.update.UpdateBrandResponse;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface BrandService {
     List<GetAllBrandsResponse> getAll();
-    GetBrandResponse getById(int id);
+    GetBrandResponse getById(UUID id);
     CreateBrandResponse add(CreateBrandRequest request);
-    UpdateBrandResponse update(int id, UpdateBrandRequest request);
-    void delete(int id);
+    UpdateBrandResponse update(UUID id, UpdateBrandRequest request);
+    void delete(UUID id);
 }

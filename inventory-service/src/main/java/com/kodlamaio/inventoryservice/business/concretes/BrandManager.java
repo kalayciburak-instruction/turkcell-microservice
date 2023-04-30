@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -22,7 +23,7 @@ public class BrandManager implements BrandService {
     }
 
     @Override
-    public GetBrandResponse getById(int id) {
+    public GetBrandResponse getById(UUID id) {
         return null;
     }
 
@@ -32,12 +33,12 @@ public class BrandManager implements BrandService {
     }
 
     @Override
-    public UpdateBrandResponse update(int id, UpdateBrandRequest request) {
+    public UpdateBrandResponse update(UUID id, UpdateBrandRequest request) {
         return null;
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(UUID id) {
 
     }
 }
