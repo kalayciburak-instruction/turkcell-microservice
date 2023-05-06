@@ -16,9 +16,8 @@ import java.util.UUID;
 @Service
 @AllArgsConstructor
 public class CarManager implements CarService {
-    // TODO: update methods
     @Override
-    public List<GetAllCarsResponse> getAll(boolean includeMaintenance) {
+    public List<GetAllCarsResponse> getAll() {
         return null;
     }
 
