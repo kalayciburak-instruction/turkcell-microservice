@@ -11,7 +11,7 @@ import com.kodlamaio.inventoryservice.business.dto.responses.get.GetBrandRespons
 import com.kodlamaio.inventoryservice.business.dto.responses.update.UpdateBrandResponse;
 import com.kodlamaio.inventoryservice.business.rules.BrandBusinessRules;
 import com.kodlamaio.inventoryservice.entities.Brand;
-import com.kodlamaio.inventoryservice.kafka.producer.InventoryProducer;
+import com.kodlamaio.inventoryservice.business.kafka.producer.InventoryProducer;
 import com.kodlamaio.inventoryservice.repository.BrandRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

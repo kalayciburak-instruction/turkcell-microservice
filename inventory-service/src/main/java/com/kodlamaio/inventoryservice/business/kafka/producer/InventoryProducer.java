@@ -1,4 +1,4 @@
-package com.kodlamaio.inventoryservice.kafka.producer;
+package com.kodlamaio.inventoryservice.business.kafka.producer;
 
 import com.kodlamaio.commonpackage.events.inventory.BrandDeletedEvent;
 import com.kodlamaio.commonpackage.events.inventory.CarCreatedEvent;

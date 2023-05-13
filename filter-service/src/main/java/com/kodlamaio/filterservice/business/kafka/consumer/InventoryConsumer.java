@@ -1,4 +1,4 @@
-package com.kodlamaio.filterservice.kafka.consumer;
+package com.kodlamaio.filterservice.business.kafka.consumer;
 
 import com.kodlamaio.commonpackage.events.inventory.BrandDeletedEvent;
 import com.kodlamaio.commonpackage.events.inventory.CarCreatedEvent;
