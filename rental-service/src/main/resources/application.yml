@@ -1,10 +1,10 @@
 spring:
   application:
-    name: inventory-service
+    name: rental-service
   datasource:
     username: postgres
     password: '12345'
-    url: jdbc:postgresql://localhost:5432/inventorydb-t1
+    url: jdbc:postgresql://localhost:5432/rentaldb-t1
   jpa:
     properties:
       hibernate:
