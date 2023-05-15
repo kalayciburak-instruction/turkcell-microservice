@@ -3,8 +3,6 @@ package com.kodlamaio.filterservice.api.controllers;
 import com.kodlamaio.filterservice.business.abstracts.FilterService;
 import com.kodlamaio.filterservice.business.dto.responses.GetAllFiltersResponse;
 import com.kodlamaio.filterservice.business.dto.responses.GetFilterResponse;
-import com.kodlamaio.filterservice.entities.Filter;
-import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,11 +17,6 @@ import java.util.UUID;
 @RequestMapping("/api/filters")
 public class FiltersController {
     private final FilterService service;
-
-    @PostConstruct
-    public void createDb() {
-        service.add(new Filter());
-    }
 
     @GetMapping
     public List<GetAllFiltersResponse> getAll() {
