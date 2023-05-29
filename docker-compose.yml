@@ -5,8 +5,22 @@ services:
     image: bashj79/kafka-kraft
     ports:
       - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://192.168.1.102:9092
     volumes:
       - kafka_data:/opt/kafka/kafka-logs
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak-t1
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    command: start-dev
+    volumes:
+      - .:/opt/jboss/keycloak/imports
 
   mongodb:
     container_name: turkcell-filterdb
