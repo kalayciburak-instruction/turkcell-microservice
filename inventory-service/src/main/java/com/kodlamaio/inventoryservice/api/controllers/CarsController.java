@@ -1,5 +1,6 @@
 package com.kodlamaio.inventoryservice.api.controllers;
 
+import com.kodlamaio.commonpackage.utils.constants.Roles;
 import com.kodlamaio.commonpackage.utils.dto.ClientResponse;
 import com.kodlamaio.inventoryservice.business.abstracts.CarService;
 import com.kodlamaio.inventoryservice.business.dto.requests.create.CreateCarRequest;
@@ -11,6 +12,10 @@ import com.kodlamaio.inventoryservice.business.dto.responses.update.UpdateCarRes
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,12 +28,16 @@ public class CarsController {
     private final CarService service;
 
     @GetMapping
+    @PreAuthorize(Roles.AdminOrModerator)
     public List<GetAllCarsResponse> getAll() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public GetCarResponse getById(@PathVariable UUID id) {
+    @PostAuthorize(Roles.AdminOrModerator + "|| returnObject.modelYear == 2019")
+    public GetCarResponse getById(@PathVariable UUID id, @AuthenticationPrincipal Jwt jwt) {
+        System.out.println(jwt.getClaims().get("preferred_username"));
+        System.out.println(jwt.getClaims().get("email"));
         return service.getById(id);
     }
 
